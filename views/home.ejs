@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" href="./stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body class="bck-body">
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="home">StudentCare</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li id="home"><a href="home">HOME</a></li>
+        <li id="aboutus"><a href="/studentDetails">GET REPORT</a></li>
+        <li id="book"><a href="/bookAppointment">BOOK AN APPOINTMENT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+	<section class="main-form col-md-offset-4 mt50">
+		<h2>Welcome to StudentCare</h2> 
+		<p>As the leader in student health and dental plans in Canada, providing simple, empowering, and reliable plans for our members is our first priority--but that’s not all we do. Explore the pages below to learn more about how we serve students.</p>
+		<label>Click here to <a style="color:white; font-size:18px;" href="/studentDetails">* Get personalized Report *</a></label><br>
+		<label>Click here to <a style="color:white; font-size:18px;" href="/bookAppointment">* Book an Appointment with the nutritionist *</a></label>
+		<br/>
+		<div class="mt30">
+		<span id="id02" class="blinking " style="color:white !importanant; font-size:24px;"></span></div>
+	</section>
+	<script>
+if("<%= data.title %>" && "<%= data.title %>"=="submitted"){
+	document.getElementById("id02").innerHTML = '**Your Personalized report is ready. <a style="color:white; font-size:24px;" class="blinking" href="/report">Click Here</a> to read.**';
+
+}
+
+</script>
+</body>
+</html>

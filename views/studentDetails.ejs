@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Student Details</title>
+<link rel="stylesheet" href="../stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body class="bck-body">
+
+	<nav class="navbar navbar-default">
+	  <div class="container">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="home">StudentCare</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav navbar-right">
+			<li id="home"><a href="/home">HOME</a></li>
+			<li id="aboutus"><a href="/studentDetails">GET REPORT</a></li>
+			<li id="book"><a href="/bookAppointment">BOOK AN APPOINTMENT</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	<form name="loginForm" action="studentDetails/sendDetails" class="report-form" method="post">
+	<h2 class="mt30 col-md-offset-1">Get Personalised Report</h2>
+	<div id="id01"></div>
+		<label class="m10s0">Select your morning meal: </label> 
+		<div>
+			<select name="breakfast" required>
+			  <option value="Eggs">Eggs</option>
+			  <option value="Yogurt">Yogurt</option>
+			  <option value="Oatmeal">Oatmeal</option>
+			  <option value="Cookies">Cookies</option>
+			  <option value="Coffee">Coffee</option>
+			</select>
+		</div>
+		<label class="m10s0">Select your lunch meal: </label> 
+		<div>
+			<select name="lunch" required>
+			  <option value="Burger">Burger</option>
+			  <option value="Pizza">Pizza</option>
+			  <option value="Salad">Salad</option>
+			  <option value="RiceandVeg">Rice and Vegetables</option>
+			  <option value="Sandwich">Sandwich</option>
+			</select>
+		</div>
+		<label class="m10s0">Select your dinner meal: </label> 
+		<div>
+			<select name="dinner" required>
+			  <option value="Burger">Burger</option>
+			  <option value="Pizza">Pizza</option>
+			  <option value="Salad">Salad</option>
+			  <option value="RiceandVeg">Rice and Vegetables</option>
+			  <option value="Sandwich">Sandwich</option>
+			</select>
+		</div>
+		<label class="m10s0">Enter your weight (in kgs.): </label><br/> 
+		<input	 type="number" name = "weight"  min="15" max="150" required/> <br /> 
+		<div class="m10s0">
+			<label>Do you cook? </label> 
+			 <input type="radio" name="doCook" value="yes" checked> Yes</input>
+			<input type="radio" name="doCook" value="no"> No</input><br>
+		</div>
+		<div class="m10s0">
+			<label>Which meals do you cook? </label> <br/>
+			<div class="ml-120">
+			<input type="checkbox" name="mealCooked" value="Breakfast"> Breakfast</input><br>
+			<input type="checkbox" name="mealCooked" class="ml-20" value="Lunch"> Lunch </input><br>
+			<input type="checkbox" name="mealCooked" class="ml-20" value="Dinner"> dinner</input><br>
+			</div>
+		</div>
+		<input type="submit" id="submit" class="btn btn-primary mt30" value="Submit">
+	</form>
+	<script>
+if("<%= sent %>" && "<%= sent %>"=="sent"){
+	document.getElementById("id01").innerHTML = "Your request has been submitted successfully. Please check homepage to read your report.";
+	document.getElementById("submit").disabled = true;
+}
+
+</script>
+</body>
+</html>

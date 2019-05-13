@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Book Appointment</title>
+<link rel="stylesheet" href="../stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body class="bck-body">
+ <script>
+ 
+ </script>
+ 	<nav class="navbar navbar-default">
+	  <div class="container">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="home">StudentCare</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav navbar-right">
+			<li id="home"><a href="/home">HOME</a></li>
+			<li id="aboutus"><a href="/studentDetails">GET REPORT</a></li>
+			<li id="book"><a href="/bookAppointment">BOOK AN APPOINTMENT</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	<form name="bookAppointmentForm" class="main-form col-md-offset-4 mt30" action="bookAppointment/book" method="post">
+	<h2 class="mt30 col-md-offset-1">Book an Appointment</h2>
+	<div id="id03"></div>
+	    <label class="m10s0">Select your Nutritionist</label> 
+		<div>
+			<select required name="nutritionist">
+			  <option value="Susan Powter">Susan Powter</option>
+			  <option value="Mila Rechcigl">Mila Rechcigl</option>
+			  <option value="Robin Miller">Robin Miller</option>
+			  <option value="Gillian McKeith">Gillian McKeith</option>
+			  <option value="Zheng Ji">Zheng Ji</option>
+			  <option value="Ellie Krieger">Ellie Krieger</option>
+			  <option value="Marion Nestle">Marion Nestle</option>
+			</select>
+		</div>
+
+	    <label class="m10s0">Select Appointment:</label> 
+	    <!--div>
+	    <label> Month</label> 
+		 <div>
+			<select name="month" >
+			 	<option value="-1"> </option>
+				<option value="1">Jan</option>
+				<option value="2">Feb</option>
+				<option value="3">Mar</option>
+				<option value="4">Apr</option>
+				<option value="5">May</option>
+				<option value="6">Jun</option>
+				<option value="7">Jul</option>
+				<option value="8">Aug</option>
+				<option value="9">Sep</option>
+				<option value="10">Oct</option>
+				<option value="11">Nov</option>
+				<option value="12">Dec</option>
+			</select>
+		  </div>
+		</div-->
+<br/>
+		<label> Day</label>
+<div>
+			<select name="day" required>
+			  	<option> </option>
+				<option value="Monday">Monday</option>
+				<option value="Tuesday">Tuesday</option>
+				<option value="Wednesday">Wednesday</option>
+				<option value="Thursday">Thursday</option>
+				<option value="Friday">Friday</option>
+			</select>
+		</div>		
+
+		<label class="m10s0"> Time (Please select all available times that are suitable for you.)</label> 
+		<div>
+			  <select name="time" multiple required>
+			  <option value="9AM">9AM</option>
+			  <option value="11:00PM">11:00PM</option>
+			  <option value="1:30PM">1:30PM</option>
+			  <option value="3:00PM">3:00PM</option>
+			  <option value="5:00PM">5:00PM</option>		  
+			</select>
+		</div>
+
+        <label class="m10s0">Please specify the primary reason for this appointment : </label> 
+		<div>
+		<textarea rows="4" cols="50" style="background:white ! important;" name="comment" placeholder="Please specify..." required></textarea>
+		</div>
+		<label class="col-md-7 ml-15 m10s0" style="text-align:justify;"> If none of these times are suitable, please call the Student Care Center during normal business hours to arrange an alternative time. The phone number to call is (408) 924-6122 </lable><br/>
+		<label class="m10s0">Business Hours : </label> 
+		<label>Mon-Fri 9AM-5PM </label> <br/>
+
+		<input type="submit" value="Create Appointment" id="submit" class="btn btn-primary mt30">
+	</form>
+		<script>
+		
+			if("<%= bookedTime %>" && ("<%= bookedTime %>").length>1){
+				document.getElementById("id03").innerHTML = 'Your appointment for '+"<%= bookedTime %>"+" has been confirmed.";
+				document.getElementById("submit").disabled = true;
+			}
+
+		</script>
+</body>
+</html>
